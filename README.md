@@ -12,4 +12,4 @@
   - [CH5: 트리 알고리즘](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch5_review.md)
 -----
 ### ETC
-- [비타민 코딩테스트] (https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
+- [비타민 코딩테스트](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
