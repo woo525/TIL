@@ -1,5 +1,4 @@
 # TIL
-Today_I_Learned
 -----
 ### Python Basic
 - [inflearn lecture](https://github.com/woo525/TIL/blob/master/Python_Basic/python_basic_inflearn.md)
