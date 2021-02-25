@@ -11,6 +11,8 @@
   - [CH4: 다양한 분류 알고리즘](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch4_review.md)
   - [CH5: 트리 알고리즘](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch5_review.md)
   - [CH6: 비지도 학습](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch6_review.md)
+  - [CH7: 딥러닝을 시작합니다](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch7_review.md)
+  - [CH8: 이미지를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch8_review.md)
 -----
 ### ETC
 - [비타민 코딩테스트](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
