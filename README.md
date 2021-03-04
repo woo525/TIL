@@ -2,8 +2,8 @@
 -----
 ### Python Basic
 - [inflearn lecture](https://github.com/woo525/TIL/blob/master/Python_Basic/python_basic_inflearn.md)
-- [나도코딩] (https://github.com/woo525/TIL/tree/master/Python_Basic/%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
-- [woonie] (https://github.com/woo525/TIL/tree/master/Python_Basic/woonie)
+- [나도코딩](https://github.com/woo525/TIL/tree/master/Python_Basic/%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
+- [woonie](https://github.com/woo525/TIL/tree/master/Python_Basic/woonie)
 -----
 ### Book
 - [혼자 공부하는 머신러닝 + 딥러닝](박해선 지음) review
