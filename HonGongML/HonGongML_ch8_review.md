@@ -244,5 +244,172 @@ model.evaluate(test_scaled, test_target)
 
 -----------------------------------------------------------------------------
 
-### 8-3:
+### 8-3: 합성곱 신경망의 시각화
 
+합성곱 층의 가중치와 특성 맵을 시각화하여 신경망이 이미지에서 어떤 것을 학습 하는지 이해해 보자!
+
+```python
+# 합성곱 신경망 -> 특히 이미지에 있는 특징을 찾아 압축하는데 뛰어난 성능
+# 케라스는 좀 더 복잡한 모델을 만들 수 있는 함수형 API를 제공 -> 합성곱 층의 특성맵을 시각화하는 데 사용
+# 필터: '커널'이라 부르는 가중치와 절편
+# 가중치는 입력 이미지의 2차원 영역에 적용되어 어떤 특징을 크게 두드러지게 표현하는 역할
+
+## 2절에서 만든 모델이 어떤 가중치를 학습했는지 확인하기 위해 체크포인트 파일 읽어 들이기
+
+# 8-2의 코드에서 best-cnn-model.h5 파일을 생성한 다음 이어서 해야 함
+from tensorflow import keras
+model = keras.models.load_model('best-cnn-model.h5')
+model.layers
+
+# layers 속성의 첫번째 원소를 선택해 weights의 첫번째 원소(가중치)와 두번째 원소(절편)의 크기를 출력
+conv = model.layers[0]
+print(conv.weights[0].shape, conv.weights[1].shape) # (3, 3), 깊이 1, 필터 32개, 절편의 개수 32개
+
+# 가중치 배열의 평균과 표준편차를 넘파이 mean() 메서드와 std() 메서드로 계산
+conv_weights = conv.weights[0].numpy()
+print(conv_weights.mean(), conv_weights.std()) 
+
+# 이 가중치가 어떤 분포를 가졌는지 직관적으로 이해하기 쉽도록 히스토그램
+import matplotlib.pyplot as plt
+plt.hist(conv_weights.reshape(-1, 1)) # 히스토그램을 그리기 위해 1차원 배열로 전달
+plt.xlabel('weight')
+plt.ylabel('count')
+plt.show()
+
+# 32개의 커널을 16개씩 두 줄에 출력
+# 맷플롯립의 subplots() 함수를 사용해 32개의 그래프 영역을 만들고 순서대로 커널을 출력
+fig, axs = plt .subplots(2, 16, figsize=(15,2))
+for i in range(2):
+  for j in range(16):
+    axs[i, j].imshow(conv_weights[:,:,0,i*16 + j], vmin=-0.5, vmax=0.5)
+    axs[i, j].axis('off')
+plt.show()
+
+# 이번에는 훈련하지 않은 빈 합성곱 신경망을 만들어 보자!
+no_training_model = keras.Sequential()
+no_training_model.add(keras.layers.Conv2D(32, kernal_size=3, activation=\
+                                          'relu', padding='same', input_shape=(28,28,1)))
+
+# 이 모델의 첫번째 층 (즉, Conv2D 층)의 가중치를 no_training_conv 변수에 저장
+no_training_conv = no_training_model.layers[0]
+print(no_training_conv.weights[0].shape)
+
+no_training_weights = no_training_conv.weights[0].numpy()
+print(no_training_weights.mean(), no_training_weigths.std())
+# 평균은 이전과 동일하게 0에 가깝지만 표준편차는 이전과 달리 매우 작음
+
+plt.hist(no_training_weights.reshape(-1, 1))
+plt.xlabel('weight')
+plt.ylabel('count')
+plt.show()
+# 대부분의 가중치가 -0.15~0.15 사이에 있고 비교적 고른 분포를 보임
+# 텐서플로가 신경망의 가중치를 처음 초기화할 때 균등 분포에서 랜덤하게 값을 선택
+
+fig, axs = plt.subplots(2, 16, figsize=(15, 2))
+for i in range(2):
+  for j in range(16):
+    axs[i, j].imshow(no_training_weights[:,:,0,i*16 + j], vmin=-0.5,
+                     vmax=0.5)
+    axs[i, j].axis('off')
+plt.show()
+# 전체적으로 가중치가 밋밋하게 초기화
+# 이를 훈련이 끝난 가중치와 비교!!
+# -> 합성곱 신경망이 패션 MNIST 데이터셋의 분류 정확도를 높이기 위해 유용한 패턴을 학습!!
+
+# 합성곱 신경망의 학습을 시각화하는 두 번 째 방법: 합성곱 층에서 출력된 특성맵을 그려 보는 것
+
+
+## 함수형 API
+# 딥러닝 -> 복잡한 모델이 많이 있음
+# 예를 들어, 입력이 2개일 수도 있고 출력이 2개일 수도 있음 -> 이럴 경우, Sequential 클래스 사용하기 어려움
+# 함수형 API: 케라스의 Model 클래스 사용하여 모델을 만듦
+dense1 = keras.layers.Dense(100, activation='sigmoid')
+dense2 = keras.layers.Dense(10, activation='softmax')
+
+# 이 객체를 함수처럼 호출
+hidden = dense1(inputs) # 파이썬의 모든 객체는 호출 가능!
+# 입력값 inputs를 Dense층에 통과시킨 후 출력값 hidden을 만들어 줌
+outputs = dense2(hidden)
+
+# 그다음 inputs와 outputs을 Model 클래스로 연결해 주면 됨
+model = Model(inputs, outputs)
+
+# 여기서, inputs은 어디서 온 걸까요?
+# Sequential 클래스는 InputLayer 클래스를 자동으로 추가하고 호출해주지만,
+# Model 클래스에서는 우리가 수동으로 만들어 호출
+# 케라스는 InputLayer 클래스 객체를 쉽게 만들 수 있도록 Input() 함수를 별도로 제공
+inputs = keras.input(shape=(784,))
+
+# 이렇게 모델을 만들게 되면 중간에 다양한 형태로 층을 연결할 수 있음
+
+print(model.input) # 2절에서 만든 model 객체의 입력
+# model.input과 model.layers[0].output을 연결하는 새로운 conv_acti 모델
+conv_acti = keras.models.Model(model.input, model.layers[0].output)
+
+
+## 특성맵 시각화
+# 케라스로 패션 MNIST 데이터셋을 읽은 후 훈련 세트에 있는 첫번째 샘플을 그려보자!
+(train_input, train_target), (test_input, test_target) =\
+  keras.datasets.fashion_mnist.load_data()
+plt.imshow(train_input[0], cmap='gray_r')
+plt.show() # 앵클부츠!
+
+# conv_acti 모델에 주입하여 Conv2D 층이 만드는 특성맵을 출력
+# (784,) 크기를 (28, 28, 1) 크기로 변경하고 255로 나누기
+inputs = train_input[0:1].reshape(-1, 28, 28, 1) / 255.0
+feature_maps = conv_acti.predict(inputs)
+
+print(feature_maps) # (1, 28, 28, 32)
+# 세임 패딩과 32개의 필터를 사용한 합성곱 층의 출력!
+# 첫번째 차원은 배치 차원이라는 점을 기억
+
+# 총 32개의 특성맵 그려보자!
+fig, axs = plt.subplots(4, 8, figsize=(15, 8))
+for i in range(4):
+  for j in range(8):
+    axs[i, j].imshow(feature_maps[0,:,:,i*8 + j])
+    axs[i, j].axis('off')
+plt.show()
+# 이 특성맵은 32개의 필터로 인해 입력 이미지에서 강하게 활성화된 부분을 보여줌
+# 여기서, 마지막 특성맵 -> 부츠의 배경이 상대적으로 크게 활성화
+
+# 두번째 합성곱 층이 만든 특성맵도 같은 방식으로 확인!
+conv2_acti = keras.models.Model(model.input, model.layers[2].output)
+# 그다음 첫번째 샘플을 conv2_acti 모델의 predict() 메서드에 전달
+inputs = train_input[0:1].reshape(-1, 28, 28, 1) / 255.0
+feature_maps = conv2_acti.predict(inputs)
+# 첫번째 풀링층에서 가로세로 크기가 절반으로 줄었고, 두번째 합성곱 층의 필터 개수는 64개
+# 그러므로 feature_maps의 크기는 배치 차원을 제외하면 (14, 14, 64)일 것
+print(feature_maps.shape) # (1, 14, 14, 64)
+
+fig, axs = plt.subplots(8, 8, figsize=(12, 12))
+for i in range(8):
+  for j in range(8):
+    axs[i, j].imshow(feature_maps[0,:,:,i*8 + j])
+    axs[i, j].axis('off')
+plt.show()
+# 이 특성맵은 시각적으로 이해하기 어려움
+
+# 합성곱 신경망의 앞부분에 있는 합성곱 층: 이미지의 시각적인 정보를 감지
+# 뒤쪽에 있는 합성곱 층: 앞쪽에서 감지한 시각적인 정보를 바탕으로 추상적인 정보를 학습
+```
+
+##### 정리하기
+
+- 시각화로 이해하는 합성곱 신경망!
+	- 2절에서 저장한 합성곱 신경망 모델을 읽어 들인 후 이 모델의 가중치와 특성 맵을 시각화
+	- 입력에 가까운 합성곱 층: 이미지에서 시각적인 정보나 패턴을 감지하도록 훈련
+	- 이어지는 합성곱 층: 조금 더 고차원적인 개념을 학습
+
+	- 함수형 API를 사용하면 복잡한 조합의 모델을 자유롭게 구성
+	- 이 절에서는 입력과 합성곱 층의 출력을 연결하여 특성 맵을 시각화하기 위한 용도로 사용
+
+- 키워드로 끝내는 핵심 포인트
+	- 가중치 시각화: 합성곱 층의 가중치를 이미지로 출력
+	- 특성 맵 시각화: 합성곱 층의 활성화 출력을 이미지로 그리는 것
+	- 함수형 API: 케라스에서 신경망 모델을 만드는 방법 중 하나
+
+- TensorFlow
+	- Model(): 케라스 모델을 만드는 클래스
+
+-----------------------------------------------------------------------------
