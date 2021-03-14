@@ -15,9 +15,7 @@
   - [CH6: 비지도 학습](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch6_review.md)
   - [CH7: 딥러닝을 시작합니다](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch7_review.md)
   - [CH8: 이미지를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch8_review.md)
------
-### Kaggle_Study
-  - 
+  - [CH9: 텍스트를 위한 인공 신경망]()
 -----
 ### ETC
 - [비타민 코딩테스트](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
