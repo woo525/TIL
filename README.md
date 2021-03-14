@@ -18,7 +18,7 @@
   - [CH9: 텍스트를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch9_review.ipynb)
 -----
 ### Kaggle Study
-  - [ML, A.I Theory]()
+  - [ML, A.I Theory](https://github.com/Sejong-Kaggle-Study-3rd/Kim_WooHyeok)
 -----
 ### ETC
 - [Vitamin Coding Test](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
