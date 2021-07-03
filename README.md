@@ -18,10 +18,10 @@
   - [CH9: 텍스트를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch9_review.ipynb)
 
 - [모두를 위한 딥러닝 시즌2 - PyTorch]
-  - [Lab-01: Tensor Manipulation]()
-  - [Lab-02 & 03: Linear regression & Deeper Look at GD]()
-  - [Lab-04: Multivariate Linear Regression]()
-  - [Lab-05: Logistic Regression]()
+  - [Lab-01: Tensor Manipulation](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_01.ipynb)
+  - [Lab-02 & 03: Linear regression & Deeper Look at GD](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_02_03.ipynb)
+  - [Lab-04: Multivariate Linear Regression](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_04.ipynb)
+  - [Lab-05: Logistic Regression](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_05.ipynb)
   - [Lab-06: ]()
 -----
 ### Kaggle Study
