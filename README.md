@@ -25,7 +25,7 @@
   - [Lab-06: ]()
 -----
 ### Kaggle Study
-  - [ML + A.I Theory](https://github.com/Sejong-Kaggle-Study-3rd/Kim_WooHyeok)
+  - [ML + A.I Theory](https://github.com/Sejong-Kaggle-Study-3rd/WooHyeok_Kim)
 -----
 ### ETC
 - [Vitamin Coding Test](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
