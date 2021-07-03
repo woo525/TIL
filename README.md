@@ -16,6 +16,13 @@
   - [CH7: 딥러닝을 시작합니다](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch7_review.md)
   - [CH8: 이미지를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch8_review.md)
   - [CH9: 텍스트를 위한 인공 신경망](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch9_review.ipynb)
+
+- [모두를 위한 딥러닝 시즌2 - PyTorch]
+  - [Lab-01: Tensor Manipulation]()
+  - [Lab-02 & 03: Linear regression & Deeper Look at GD]()
+  - [Lab-04: Multivariate Linear Regression]()
+  - [Lab-05: Logistic Regression]()
+  - [Lab-06: ]()
 -----
 ### Kaggle Study
   - [ML + A.I Theory](https://github.com/Sejong-Kaggle-Study-3rd/Kim_WooHyeok)
