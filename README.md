@@ -6,7 +6,7 @@
 - [woonie](https://github.com/woo525/TIL/tree/master/Python_Basic/woonie)
 -----
 ### Book
-- [혼자 공부하는 머신러닝 + 딥러닝](박해선 지음) review
+- [혼자 공부하는 머신러닝 + 딥러닝](박해선 지음)
   - [CH1: 나의 첫 머신러닝](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch1_review.md)
   - [CH2: 데이터 다루기](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch2_review.md)
   - [CH3: 회귀 알고리즘과 모델 규제](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch3_review.md)
