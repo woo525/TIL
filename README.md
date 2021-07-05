@@ -22,7 +22,12 @@
   - [Lab-02 & 03: Linear regression & Deeper Look at GD](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_02_03.ipynb)
   - [Lab-04: Multivariate Linear Regression](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_04.ipynb)
   - [Lab-05: Logistic Regression](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_05.ipynb)
-  - [Lab-06: ]()
+  - [Lab-06: Softmax Classification](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_06.ipynb)
+  - [Lab-07: Tips & MNIST Introduction](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_07.ipynb)
+  - [Lab-08: Perceptron & Multi Layer Perceptron](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_08.ipynb)
+  - [Lab-09(1): ReLU & Weight initialization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(1).ipynb)
+  - [Lab-09(2): Dropout & Batch Normalization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(2).ipynb)
+  - [Lab-10: ]()
 -----
 ### Kaggle Study
   - [ML & A.I Basic Theory](https://github.com/Sejong-Kaggle-Study-3rd/WooHyeok_Kim)
