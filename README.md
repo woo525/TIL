@@ -1,11 +1,9 @@
 # TIL
 -----
-### Python Basic
-- [inflearn lecture](https://github.com/woo525/TIL/blob/master/Python_Basic/python_basic_inflearn.md)
-- [나도코딩](https://github.com/woo525/TIL/tree/master/Python_Basic/%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
-- [woonie](https://github.com/woo525/TIL/tree/master/Python_Basic/woonie)
+### 📃 Paper
+
 -----
-### Book
+### 📚 Book
 - [혼자 공부하는 머신러닝 + 딥러닝](박해선 지음) - Review
   - [CH1: 나의 첫 머신러닝](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch1_review.md)
   - [CH2: 데이터 다루기](https://github.com/woo525/TIL/blob/master/HonGongML/HonGongML_ch2_review.md)
@@ -28,9 +26,14 @@
   - [Lab-09(1): ReLU & Weight initialization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(1).ipynb)
   - [Lab-09(2): Dropout & Batch Normalization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(2).ipynb)
 -----
-### Kaggle Study
+### ✏️ Kaggle Study
   - [ML & A.I Basic Theory](https://github.com/Sejong-Kaggle-Study-3rd/WooHyeok_Kim)
 -----
-### ETC
+### 🌱 Python Basic
+- [inflearn lecture](https://github.com/woo525/TIL/blob/master/Python_Basic/python_basic_inflearn.md)
+- [나도코딩](https://github.com/woo525/TIL/tree/master/Python_Basic/%EB%82%98%EB%8F%84%EC%BD%94%EB%94%A9)
+- [woonie](https://github.com/woo525/TIL/tree/master/Python_Basic/woonie)
+-----
+### 🔍 ETC
 - [Vitamin Coding Test](https://github.com/woo525/TIL/blob/master/ETC/bitamin_coding_test.md)
 - [How to use 'MarkDown'](https://gist.github.com/ihoneymon/652be052a0727ad59601)
