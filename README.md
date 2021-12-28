@@ -27,7 +27,6 @@
   - [Lab-08: Perceptron & Multi Layer Perceptron](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_08.ipynb)
   - [Lab-09(1): ReLU & Weight initialization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(1).ipynb)
   - [Lab-09(2): Dropout & Batch Normalization](https://github.com/woo525/TIL/blob/master/ML_DL_Every_S2/Lab_09(2).ipynb)
-  - [Lab-10: ]()
 -----
 ### Kaggle Study
   - [ML & A.I Basic Theory](https://github.com/Sejong-Kaggle-Study-3rd/WooHyeok_Kim)
